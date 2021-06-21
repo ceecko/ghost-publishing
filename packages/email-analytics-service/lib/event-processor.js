@@ -1,8 +1,4 @@
 module.exports = class EventProcessor {
-    constructor({logging} = {}) {
-        this.logging = logging || console;
-    }
-
     // override these in a sub-class to define app-specific behaviour
 
     async getEmailId(/*event*/) {

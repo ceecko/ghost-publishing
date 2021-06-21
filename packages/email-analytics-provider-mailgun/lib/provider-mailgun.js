@@ -1,5 +1,6 @@
 const mailgunJs = require('mailgun-js');
 const moment = require('moment');
+const logging = require('@tryghost/logging');
 const {EventProcessingResult} = require('@tryghost/email-analytics-service');
 
 const EVENT_FILTER = 'delivered OR opened OR failed OR unsubscribed OR complained';
@@ -8,10 +9,9 @@ const TRUST_THRESHOLD_S = 30 * 60; // 30 minutes
 const DEFAULT_TAGS = ['bulk-email'];
 
 class EmailAnalyticsProviderMailgun {
-    constructor({config, settings, mailgun, logging = console} = {}) {
+    constructor({config, settings, mailgun} = {}) {
         this.config = config;
         this.settings = settings;
-        this.logging = logging;
         this.tags = [...DEFAULT_TAGS];
         this._mailgun = mailgun;
 
@@ -37,7 +37,7 @@ class EmailAnalyticsProviderMailgun {
         const hasMailgunSetting = !!(bulkEmailSetting && bulkEmailSetting.apiKey && bulkEmailSetting.baseUrl && bulkEmailSetting.domain);
 
         if (!hasMailgunConfig && !hasMailgunSetting) {
-            this.logging.warn(`Bulk email service is not configured`);
+            logging.warn(`Bulk email service is not configured`);
             return undefined;
         }
 
@@ -88,7 +88,7 @@ class EmailAnalyticsProviderMailgun {
         const {mailgun} = this;
 
         if (!mailgun) {
-            this.logging.warn(`Bulk email service is not configured`);
+            logging.warn(`Bulk email service is not configured`);
             return new EventProcessingResult();
         }
 
