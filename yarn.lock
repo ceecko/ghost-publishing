@@ -306,6 +306,14 @@
   dependencies:
     long-timeout "^0.1.1"
 
+"@tryghost/debug@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@tryghost/debug/-/debug-0.1.5.tgz#dc001fa7c39ccce71aeb4dc9b5b0efc92bde05dc"
+  integrity sha512-XMB1GgjdfO4ZrMQ1rPSIy+0kSKHKMuBjBpUBPBv3TTDQSyZ3OR/7q0xHmr3MhTeBRZi9lrZUBjrbjbiqEj9wCA==
+  dependencies:
+    "@tryghost/root-utils" "^0.3.4"
+    debug "^4.3.1"
+
 "@tryghost/elasticsearch-bunyan@0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@tryghost/elasticsearch-bunyan/-/elasticsearch-bunyan-0.1.1.tgz#5a36d81dd020825dd563b1357ae6c249580c46f5"
@@ -313,10 +321,34 @@
   dependencies:
     "@elastic/elasticsearch" "^7.10.0"
 
+"@tryghost/errors@^0.2.14":
+  version "0.2.14"
+  resolved "https://registry.yarnpkg.com/@tryghost/errors/-/errors-0.2.14.tgz#473baacd07eb6b0a8877ad8a6a006c657ea81f33"
+  integrity sha512-EYaOjI8wVrykgS/WkIW/GhSo2vDaXn710SSfS4e7tehAtFoU/XwzFR4yCYzBAMHaZaciSdT2VmssGlPXZib7Lw==
+  dependencies:
+    "@tryghost/ignition-errors" "^0.1.0"
+    lodash "^4.17.21"
+
+"@tryghost/ignition-errors@^0.1.0":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@tryghost/ignition-errors/-/ignition-errors-0.1.5.tgz#1ad5bc9e169df71360ecc8294571b41d212b0f00"
+  integrity sha512-Cx1nQdrz4NFzEqWxbS20sKfcrIdG0dzyd+7pTuc1ErWMFIe3/nO37Q8yxMSp66HkJ5KYj/tOH8r3pkQRc+whdQ==
+  dependencies:
+    lodash "^4.17.21"
+    uuid "^8.3.2"
+
 "@tryghost/root-utils@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@tryghost/root-utils/-/root-utils-0.1.0.tgz#7578cb5e57953316fef58edd43a152a86b719a8f"
   integrity sha512-zy3PSviwytjvjdMso86RYZLE2I4e2yL/s83fIEf/g17C8V8hsCcgE83cFOpCw3ISWDFX3Qi0IX9kI3or2pfGLg==
+  dependencies:
+    caller "^1.0.1"
+    find-root "^1.1.0"
+
+"@tryghost/root-utils@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@tryghost/root-utils/-/root-utils-0.3.4.tgz#621bc9564ba3fa78ac1a066f3794f501cf85e055"
+  integrity sha512-7ExJfA7m5s8djpe8d7ij/rvLZbZ6O9i/HvG7PHCTvDoilyINUW1xwBgsGR2cUmKwLO3dilYYxaQfvRJXB0VwBA==
   dependencies:
     caller "^1.0.1"
     find-root "^1.1.0"
@@ -3233,7 +3265,7 @@ util-deprecate@~1.0.1:
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-uuid@8.3.2:
+uuid@8.3.2, uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
