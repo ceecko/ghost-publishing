@@ -24,7 +24,7 @@ jobs:
       - run: yarn test
 
       - uses: daniellockyer/action-slack-build@master
-        if: failure() && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: failure() && github.event_name == 'push' && github.ref == 'refs/heads/master'
         with:
           status: ${{ job.status }}
         env:
